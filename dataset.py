@@ -112,5 +112,5 @@ if __name__ == "__main__":
     img = DementiaDataset.tensor2img(img_tensor)
     plt.imshow(img, cmap='gray')
     plt.axis('off')
-    plt.title(f'Label {label.item()}')
+    plt.title(f'Label: {label.item()}')
     plt.show()

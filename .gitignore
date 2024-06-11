@@ -1,0 +1,6 @@
+# ignore files
+*.jpg
+
+# ignore folders
+all_images/
+Dataset/
