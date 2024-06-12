@@ -7,7 +7,7 @@
 Welcome to the Brain Scan Image Classification for Dementia Patients repository. This project aims to provide an educational example of a multiclass image classification problem using convolutional neural networks (CNNs).
 
 ## Project Overview 🔖
-This repository contains the necessary code and guidance to build, train, and evaluate a CNN model that classifies brain scan images into four categories of dementia: Non-Demented, Very Mild Demented, Mild Demented, and Moderate Demented.
+This repository contains the necessary code and guidance to build, train, and evaluate a CNN model that classifies brain scan images into four categories of dementia: non-demented, very mild, mild, and moderate dementia.
 
 ## Learning Objectives 👨🏽‍💻
 By working through this project, you will learn how to:
