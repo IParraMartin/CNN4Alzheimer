@@ -9,6 +9,7 @@ We build our convolutional network with the following parameters:
     - n_filters = 8 (kind of like inspectors that go through the image)
     - dropout_rate = 0.5 (chance of dropping connections to prevent overfitting)
 """
+
 class DementiaModel(nn.Module):
     def __init__(self, in_channels=1, n_filters=8, classes=4, dropout_rate=0.5):
         super().__init__()
