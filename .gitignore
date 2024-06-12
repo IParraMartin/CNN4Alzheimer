@@ -5,3 +5,4 @@
 all_images/
 Dataset/
 .vscode/
+__pycache__/
