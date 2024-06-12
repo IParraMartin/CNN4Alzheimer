@@ -12,7 +12,7 @@ DATA_PATH = 'all_images'
 CSV_FILE = 'labels.csv'
 EPOCHS = 100
 LEARNING_RATE = 1e-4
-BATCH_SIZE = 64
+BATCH_SIZE = 16
 SAVING_PATH = './'
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'mps')

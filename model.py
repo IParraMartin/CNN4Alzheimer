@@ -11,7 +11,7 @@ We build our convolutional network with the following parameters:
 """
 
 class DementiaModel(nn.Module):
-    def __init__(self, in_channels=1, n_filters=8, classes=4, dropout_rate=0.3):
+    def __init__(self, in_channels=1, n_filters=32, classes=4, dropout_rate=0.2):
         super().__init__()
 
         self.cnn_block = nn.Sequential(
@@ -84,19 +84,23 @@ class DementiaModel(nn.Module):
     def _initialize_weights(self):
         for m in self.modules():
             if isinstance(m, nn.Conv2d):
+                # Kaiming/He initialization for Conv2D layers
                 nn.init.kaiming_normal_(
                     m.weight, 
                     mode='fan out',
                     nonlinearity='relu'
                 )
                 if m.bias is not None:
+                    # Constant initialization for biases
                     nn.init.constant_(m.bias, 0)
 
             elif isinstance(m, nn.BatchNorm2d):
+                # Constant initialization for BatchNorm layers
                 nn.init.constant_(m.weight, 1)
                 nn.init.constant_(m.bias, 0)
             
             elif isinstance(m, nn.Linear):
+                # Normal initialization for Linear layers
                 nn.init.normal_(m.weight, 0, 0.01)
                 nn.init.constant_(m.bias, 0)
 
