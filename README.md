@@ -1,10 +1,10 @@
-# Brain Scan Image Classification for Dementia Patients🧠
+# Alzheimer Image Classification with CNNs 🧠
 
 <p align="center">
   <img src="img_readme.png" width="350" title="An example of a processed image">
 </p>
 
-Welcome to the Brain Scan Image Classification for Dementia Patients repository. This project aims to provide an educational example of a multiclass image classification problem using convolutional neural networks (CNNs).
+Welcome to the Alzheimer Image Classification repository! This project aims to provide an educational example of a multiclass image classification problem using convolutional neural networks (CNNs).
 
 ## Project Overview 🔖
 This repository contains the necessary code and guidance to build, train, and evaluate a CNN model that classifies brain scan images into four categories of dementia: non-demented, very mild, mild, and moderate dementia.
