@@ -4,3 +4,4 @@
 # ignore folders
 all_images/
 Dataset/
+.vscode/
