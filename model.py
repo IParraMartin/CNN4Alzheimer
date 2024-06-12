@@ -11,40 +11,60 @@ We build our convolutional network with the following parameters:
 """
 
 class DementiaModel(nn.Module):
-    def __init__(self, in_channels=1, n_filters=8, classes=4, dropout_rate=0.5):
+    def __init__(self, in_channels=1, n_filters=8, classes=4, dropout_rate=0.3):
         super().__init__()
 
         self.cnn_block = nn.Sequential(
-            nn.Conv2d(in_channels, 
-                      n_filters, 
-                      kernel_size=3, 
-                      stride=1, 
-                      padding=1),
+            nn.Conv2d(
+                in_channels, 
+                n_filters, 
+                kernel_size=3, 
+                stride=1, 
+                padding=1
+            ),
+            nn.BatchNorm2d(n_filters),
             nn.ReLU(),
-            nn.MaxPool2d(kernel_size=2, 
-                         stride=2),
+            nn.MaxPool2d(
+                kernel_size=2, 
+                stride=2
+            ),
             nn.Dropout(dropout_rate),
-            nn.Conv2d(n_filters, 
-                      n_filters * 2, 
-                      kernel_size=3, 
-                      stride=1, 
-                      padding=1),
+
+            nn.Conv2d(
+                n_filters, 
+                n_filters * 2, 
+                kernel_size=3, 
+                stride=1, 
+                padding=1
+            ),
+            nn.BatchNorm2d(n_filters * 2),
             nn.ReLU(),
-            nn.MaxPool2d(kernel_size=2, 
-                         stride=2),
+            nn.MaxPool2d(
+                kernel_size=2, 
+                stride=2
+            ),
             nn.Dropout(dropout_rate),
-            nn.Conv2d(n_filters * 2, 
-                      n_filters * 4, 
-                      kernel_size=3, 
-                      stride=1, 
-                      padding=1),
+
+            nn.Conv2d(
+                n_filters * 2, 
+                n_filters * 4, 
+                kernel_size=3, 
+                stride=1, 
+                padding=1
+            ),
+            nn.BatchNorm2d(n_filters * 4),
             nn.ReLU(),
-            nn.MaxPool2d(kernel_size=2, 
-                         stride=2),
+            nn.MaxPool2d(
+                kernel_size=2, 
+                stride=2
+            ),
             nn.Dropout(dropout_rate),
+            
             nn.Flatten(),
-            nn.Linear(n_filters * 4 * 16 * 16, 
-                      classes)
+            nn.Linear(
+                n_filters * 4 * 16 * 16, 
+                classes
+            )
         )
     
     """
@@ -57,6 +77,29 @@ class DementiaModel(nn.Module):
 
     def forward(self, x):
         return self.cnn_block(x)
+
+    """
+    Here we introduce some initializations for the weights of our model. 
+    """
+    def _initialize_weights(self):
+        for m in self.modules():
+            if isinstance(m, nn.Conv2d):
+                nn.init.kaiming_normal_(
+                    m.weight, 
+                    mode='fan out',
+                    nonlinearity='relu'
+                )
+                if m.bias is not None:
+                    nn.init.constant_(m.bias, 0)
+
+            elif isinstance(m, nn.BatchNorm2d):
+                nn.init.constant_(m.weight, 1)
+                nn.init.constant_(m.bias, 0)
+            
+            elif isinstance(m, nn.Linear):
+                nn.init.normal_(m.weight, 0, 0.01)
+                nn.init.constant_(m.bias, 0)
+
     
 if __name__ == "__main__":
     # initilaize the model
