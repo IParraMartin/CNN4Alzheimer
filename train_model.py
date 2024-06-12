@@ -133,3 +133,5 @@ if __name__ == '__main__':
         optimizer=optimizer,
         device=device
     )
+
+    torch.save(cnn_model.state_dict(), 'dementia_detection_model.pth')
