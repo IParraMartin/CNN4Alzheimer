@@ -15,5 +15,4 @@ It provides a good and clear way to understand the workflow of a simple vision m
 - How to make a compartimentalize training loop
 
 ## Where to find the dataset
-The dataset I used can be found [here](https://www.kaggle.com/datasets/tourist55/alzheimers-dataset-4-class-of-images). However, you will need to run the ```divide.py``` script to get a file combining all images
-
+The dataset I used can be found [here](https://www.kaggle.com/datasets/tourist55/alzheimers-dataset-4-class-of-images).
