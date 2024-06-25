@@ -1,8 +1,5 @@
 import os
-try:
-    import pandas as pd
-except Exception as e:
-    print(f'{e}. Install pandas. Try <pip install pandas> or <pip3 install pandas>.')
+import pandas as pd
 import argparse
 
 
