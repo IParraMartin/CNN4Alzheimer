@@ -19,9 +19,11 @@ def get_file_labels(root_dir: str, label: int) -> list:
     """
 
     subfiles = os.listdir(root_dir)
+
     if not subfiles:
         print(f'No files found in {root_dir}.')
         return []
+    
     return [(file, label) for file in subfiles if file.lower().endswith(('.jpg', '.png', '.jpeg'))]
 
 
@@ -44,7 +46,9 @@ def get_items(root_dir):
         temp.append(kind)
     
     flat_list = [item for sublist in temp for item in sublist]
+
     return flat_list
+
 
 if __name__ == "__main__":
 
@@ -57,13 +61,10 @@ if __name__ == "__main__":
     root_dir = args.root_dir
     out_dir = args.out_dir
 
-    # Ensure output directory exists
     assert os.path.isdir(out_dir), 'Insert a valid output directory.'
 
-    # Generate the flat list of file-label pairs
     flat = get_items(root_dir)
-    
-    # Create DataFrame and save to CSV
+
     df = pd.DataFrame(flat, columns=args.col_names)
     out_file = os.path.join(out_dir, 'output.csv')
     df.to_csv(out_file, index=False)
