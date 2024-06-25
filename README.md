@@ -37,7 +37,7 @@ This repository includes the following components:
 ## How To Get Annotations File: Example (CLI)
 You can pass the following arguments to get the .csv file with the image annotations and labels to use in the ```__getitem__``` method.
 ```
-cd CNNMentia
+cd CNN4Alzheimer
 python3 utils/annotate.py \
 --root_dir ROOT_DIR_WITH_CLASS_SUBFOLDERS
 --out_dir OUT_DIR
