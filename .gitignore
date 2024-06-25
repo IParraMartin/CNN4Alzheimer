@@ -4,6 +4,5 @@
 # ignore folders
 all_images/
 Dataset/
-.vscode/
 __pycache__/
 .DS_Store

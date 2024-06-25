@@ -1,7 +1,7 @@
 # Alzheimer Image Classification with CNNs 🧠
 
 <p align="center">
-  <img src="img_readme.png" width="350" title="An example of a processed image">
+  <img src="resources/img_readme.png" width="350" title="Example of a processed image">
 </p>
 
 Welcome to the Alzheimer Image Classification repository! This project aims to provide an educational example of a multiclass image classification problem using convolutional neural networks (CNNs).
@@ -29,7 +29,7 @@ The dataset used in this project is available on [Kaggle](https://www.kaggle.com
 ## Repository Contents 📦
 This repository includes the following components:
 
-- .csv path file builder (```labels.py```)
+- .csv path file builder (```annotate.py```)
 - Dataset class: Handles data loading and preprocessing (```dataset.py```)
 - Model definition: Defines the CNN architecture (```model.py```)
-- Training script: Contains the training loop and model evaluation (```train_model.py```)
+- Training script: Contains the training loop and model evaluation (```train.py```)
