@@ -4,8 +4,6 @@
   <img src="resources/img_readme.png" width="350" title="Example of a processed image">
 </p>
 
-Welcome to the Alzheimer Image Classification repository! This project aims to provide an educational example of a multiclass image classification problem using convolutional neural networks (CNNs).
-
 ## Project Overview 🔖
 This repository contains the necessary code and guidance to build, train, and evaluate a CNN model that classifies brain scan images into four categories of dementia: non-demented, very mild, mild, and moderate dementia.
 
